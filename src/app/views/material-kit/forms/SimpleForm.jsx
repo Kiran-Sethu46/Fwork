@@ -7,11 +7,11 @@ import {
   Radio,
   RadioGroup,
   FormControlLabel,
-  Checkbox
+  Checkbox,
 } from "@material-ui/core";
 import {
   MuiPickersUtilsProvider,
-  KeyboardDatePicker
+  KeyboardDatePicker,
 } from "@material-ui/pickers";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
@@ -27,12 +27,12 @@ class SimpleForm extends Component {
     password: "",
     confirmPassword: "",
     gender: "",
-    agreement: ""
+    agreement: "",
   };
 
   componentDidMount() {
     // custom rule will have name 'isPasswordMatch'
-    ValidatorForm.addValidationRule("isPasswordMatch", value => {
+    ValidatorForm.addValidationRule("isPasswordMatch", (value) => {
       if (value !== this.state.password) {
         return false;
       }
@@ -45,17 +45,17 @@ class SimpleForm extends Component {
     ValidatorForm.removeValidationRule("isPasswordMatch");
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     // console.log("submitted");
     // console.log(event);
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     event.persist();
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleDateChange = date => {
+  handleDateChange = (date) => {
     // console.log(date);
 
     this.setState({ date });
@@ -63,39 +63,36 @@ class SimpleForm extends Component {
 
   render() {
     let {
-      username,
+      uploadImage,
       firstName,
-      creditCard,
+
       mobile,
       password,
       confirmPassword,
       gender,
       date,
-      email
+      email,
+      youtube,
     } = this.state;
     return (
       <div>
         <ValidatorForm
           ref="form"
           onSubmit={this.handleSubmit}
-          onError={errors => null}
+          onError={(errors) => null}
         >
+          <h6 style={{ marginTop: "30px" }}>Upload Image </h6>
+          <TextValidator
+            label="Image*"
+            onChange={this.handleChange}
+            type="file"
+            name="UPLOAD Image"
+            value={uploadImage}
+            validators={["required"]}
+            errorMessages={["this field is required"]}
+          />
           <Grid container spacing={6}>
             <Grid item lg={6} md={6} sm={12} xs={12}>
-              <TextValidator
-                className="mb-4 w-full"
-                label="Username (Min length 4, Max length 9)"
-                onChange={this.handleChange}
-                type="text"
-                name="username"
-                value={username}
-                validators={[
-                  "required",
-                  "minStringLength: 4",
-                  "maxStringLength: 9"
-                ]}
-                errorMessages={["this field is required"]}
-              />
               <TextValidator
                 className="mb-4 w-full"
                 label="First Name"
@@ -129,22 +126,18 @@ class SimpleForm extends Component {
                   value={date}
                   onChange={this.handleDateChange}
                   KeyboardButtonProps={{
-                    "aria-label": "change date"
+                    "aria-label": "change date",
                   }}
                 />
               </MuiPickersUtilsProvider>
               <TextValidator
                 className="mb-8 w-full"
-                label="Credit Card"
+                label="Youtube"
                 onChange={this.handleChange}
-                type="number"
-                name="creditCard"
-                value={creditCard}
-                validators={[
-                  "required",
-                  "minStringLength:16",
-                  "maxStringLength: 16"
-                ]}
+                type="link"
+                name="Youtube Link"
+                value={youtube}
+                validators={["required"]}
                 errorMessages={["this field is required"]}
               />
             </Grid>
@@ -180,7 +173,7 @@ class SimpleForm extends Component {
                 validators={["required", "isPasswordMatch"]}
                 errorMessages={[
                   "this field is required",
-                  "password didn't match"
+                  "password didn't match",
                 ]}
               />
               <RadioGroup

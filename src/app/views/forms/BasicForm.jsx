@@ -7,15 +7,17 @@ class BasicForm extends Component {
   render() {
     return (
       <div className="m-sm-30">
-        <div  className="mb-sm-30">
+        <div className="mb-sm-30">
           <Breadcrumb
             routeSegments={[
-              { name: "Forms", path: "/forms" },
-              { name: "Basic" }
+              { name: "Submit", path: "/forms" },
+              { name: "Submit" },
             ]}
           />
         </div>
-        <Card className="px-6 pt-2 pb-4"><SimpleForm /></Card>
+        <Card className="px-6 pt-2 pb-4">
+          <SimpleForm />
+        </Card>
       </div>
     );
   }

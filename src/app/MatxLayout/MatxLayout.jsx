@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import AppContext from "app/appContext";
 import {
   setLayoutSettings,
-  setDefaultSettings
+  setDefaultSettings,
 } from "app/redux/actions/LayoutActions";
 import { isEqual, merge } from "lodash";
 import { isMdScreen, getQueryParam } from "utils";
@@ -99,11 +99,11 @@ class MatxLayout extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   setLayoutSettings: PropTypes.func.isRequired,
   setDefaultSettings: PropTypes.func.isRequired,
   settings: state.layout.settings,
-  defaultSettings: state.layout.defaultSettings
+  defaultSettings: state.layout.defaultSettings,
 });
 
 MatxLayout.contextType = AppContext;

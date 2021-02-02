@@ -33,10 +33,10 @@ const StatCards2 = () => {
             >
               <Icon className="text-error">star_outline</Icon>
             </Fab>
-            <h5 className="font-medium text-error m-0 ml-3">Transactions</h5>
+            <h5 className="font-medium text-error m-0 ml-3">New Users</h5>
           </div>
           <div className="pt-4 flex items-center">
-            <h2 className="m-0 text-muted flex-grow">$2.8M</h2>
+            <h2 className="m-0 text-muted flex-grow">2.8M</h2>
             <div className="ml-3 small-circle bg-error text-white">
               <Icon className="small-icon">expand_less</Icon>
             </div>

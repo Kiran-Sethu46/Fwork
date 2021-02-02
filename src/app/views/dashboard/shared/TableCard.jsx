@@ -7,7 +7,7 @@ import {
   TableHead,
   TableRow,
   TableCell,
-  TableBody
+  TableBody,
 } from "@material-ui/core";
 
 const TableCard = () => {
@@ -16,37 +16,37 @@ const TableCard = () => {
       imgUrl: "/assets/images/products/headphone-2.jpg",
       name: "earphone",
       price: 100,
-      available: 15
+      available: 15,
     },
     {
       imgUrl: "/assets/images/products/headphone-3.jpg",
       name: "earphone",
       price: 1500,
-      available: 30
+      available: 30,
     },
     {
       imgUrl: "/assets/images/products/iphone-2.jpg",
       name: "iPhone x",
       price: 1900,
-      available: 35
+      available: 35,
     },
     {
       imgUrl: "/assets/images/products/iphone-1.jpg",
       name: "iPhone x",
       price: 100,
-      available: 0
+      available: 0,
     },
     {
       imgUrl: "/assets/images/products/headphone-3.jpg",
       name: "Head phone",
       price: 1190,
-      available: 5
-    }
+      available: 5,
+    },
   ];
 
   return (
     <Card elevation={3} className="pt-5 mb-6">
-      <div className="card-title px-6 mb-3">top selling products</div>
+      <div className="card-title px-6 mb-3">Most Seen</div>
       <div className="overflow-auto">
         <Table className="product-table">
           <TableHead>

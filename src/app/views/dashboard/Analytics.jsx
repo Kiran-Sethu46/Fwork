@@ -22,7 +22,7 @@ class Dashboard1 extends Component {
       <Fragment>
         <div className="pb-24 pt-7 px-8 bg-primary">
           <div className="card-title capitalize text-white mb-4 text-white-secondary">
-            Last 12 months sales
+            Last 3 Hours Views
           </div>
           <ModifiedAreaChart
             height="280px"
@@ -30,8 +30,8 @@ class Dashboard1 extends Component {
               series: [
                 {
                   data: [34, 45, 31, 45, 31, 43, 26, 43, 31, 45, 33, 40],
-                  type: "line"
-                }
+                  type: "line",
+                },
               ],
               xAxis: {
                 data: [
@@ -46,9 +46,9 @@ class Dashboard1 extends Component {
                   "Sep",
                   "Oct",
                   "Nov",
-                  "Dec"
-                ]
-              }
+                  "Dec",
+                ],
+              },
             }}
           ></ModifiedAreaChart>
         </div>
@@ -70,13 +70,13 @@ class Dashboard1 extends Component {
             <Grid item lg={4} md={4} sm={12} xs={12}>
               <Card className="px-6 py-4 mb-6">
                 <div className="card-title">Traffic Sources</div>
-                <div className="card-subtitle">Last 30 days</div>
+                <div className="card-subtitle">Last 3 Hours</div>
                 <DoughnutChart
                   height="300px"
                   color={[
                     theme.palette.primary.dark,
                     theme.palette.primary.main,
-                    theme.palette.primary.light
+                    theme.palette.primary.light,
                   ]}
                 />
               </Card>
