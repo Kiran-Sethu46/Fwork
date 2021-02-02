@@ -4,7 +4,7 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
 } from "react-google-maps";
 
 import { InfoBox } from "react-google-maps/lib/components/addons/InfoBox";
@@ -16,20 +16,20 @@ const MyMapComponent = compose(
       "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div className="h-full" />,
     containerElement: <div className="h-400" />,
-    mapElement: <div className="h-full" />
+    mapElement: <div className="h-full" />,
   }),
   withScriptjs,
   withGoogleMap
-)(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+)((props) => (
+  <GoogleMap defaultZoom={8} defaultCenter={{ lat: 28.7041, lng: 77.1025 }}>
     <Marker
       isMarkerShown={false}
-      position={{ lat: -34.397, lng: 150.644 }}
+      position={{ lat: 28.7041, lng: 77.1025 }}
       onClick={props.onMarkerClick}
     >
       <InfoBox options={{ closeBoxURL: ``, enableEventPropagation: true }}>
         <Card className="p-4">
-          <p className="whitespace-pre m-0">Hello World !!!</p>
+          <p className="whitespace-pre m-0">New Delhi</p>
         </Card>
       </InfoBox>
     </Marker>
@@ -40,7 +40,7 @@ class MarkerMap extends React.PureComponent {
   timer;
 
   state = {
-    isMarkerShown: false
+    isMarkerShown: false,
   };
 
   componentDidMount() {

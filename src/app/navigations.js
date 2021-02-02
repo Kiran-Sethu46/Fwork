@@ -9,7 +9,7 @@ export const navigations = [
     icon: "Submit",
     children: [
       {
-        name: "Basic",
+        name: "Upload",
         path: "/forms/basic",
         iconText: "B",
       },
